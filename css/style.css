@@ -1,0 +1,293 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    transition: all 1s;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 100vw;
+}
+h1::first-letter{
+    color: #f5a623;
+}
+h1{
+    z-index: 50;
+    color: white;
+    font-size: 5em;
+    margin-left: 60px;
+}
+header{
+    position: relative;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+header img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+nav{
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s;
+}
+nav.scroll{
+    background-color: #464646;
+    width: 80%;
+    margin: 0 10%;
+    justify-content: space-between;
+    height: 60px;
+}
+nav.scroll .logo img{
+    margin-top: 0;
+}
+nav.scroll .desktopnav ul{
+    right: 12%;
+}
+.logo{
+    height: 50px;
+}
+.logo img{
+    height: 50px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.desktopnav ul{
+    display: flex;
+    right: 30px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+}
+.desktopnav li{
+    list-style: none;
+    margin: 0 40px;
+}
+.desktopnav li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Header And Nav Menu Ends Here */
+/* Projects Section Starts Here */
+.projects{
+    width: 100vw;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 0 0 0;
+}
+hr{
+    height: 3px;
+    background-color: black;
+    width: 500px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.projectwrapper{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+.projectgallery img{
+    width: 90%;
+    cursor: pointer;
+}
+.projectgallery{
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;   
+}
+.projectgallery div{
+    width: 50%;
+}
+.activeproject{
+    width: 60%;
+}
+.activeproject img{
+    width: 100%;
+}
+/* Contact Section Starts Here */
+.contact{
+    background-color: #464646;
+}
+.contactform form{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+}
+.contactform input, .contactform textarea{
+    margin: 5px;
+    padding: 10px 30px;
+    font-size: 1.25em;
+    cursor: text;
+}
+textarea::placeholder{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.contactform input[type= "submit"]{
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.contact h2{
+    color: white;
+}
+.contact hr{
+    background-color: white;
+}
+/* About Me Section Starts */
+.aboutme{
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    line-height: 20px;
+}
+.aboutme p{
+    padding: 0 20px;
+    font-size: large;
+    text-align: justify;
+    word-spacing: 5px;
+}
+/* Footer Section */
+footer{
+    background-color: #464646;
+    padding: 40px;
+}
+footer p{
+    color: #f5a623;
+    text-align: center;
+}
+footer a{
+    color: white;
+}
+/* Responsive Design Starts */
+.mobilenav, .menuBtn, .closeBtn, .menuBtn img, .closeBtn img{
+    display: none;
+}
+@media(max-width: 800px){
+    header h1{
+        margin-left: 5%;
+        font-size: 3em;
+    }
+    header{
+        height: 80vh;
+    }
+    .desktopnav{
+        display: none;
+    }
+    nav.scroll{
+        width: 100%;
+        margin: 0;
+    }
+    nav.scroll .logo img{
+        margin-top: 10px;
+    }
+    .logo img{
+        height: 75%;
+        margin-left: 30px;
+    }
+    .menuBtn{
+        width: 30px;
+        display: block;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+    }
+    .menuBtn img{
+        width: 100%;
+        display: block;
+    }
+    .closeBtn{
+        width: 30px;
+        display: none;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+        z-index: 200;
+    }
+    .closeBtn img{
+        width: 100%;
+        display: block;
+    }
+    .mobilenav{
+        display: flex;
+        position: fixed;
+        width: 70vw;
+        height: 100%;
+        right: 0;
+        bottom: 80%;
+        z-index: 100;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.767);
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        opacity: 0;
+        transition: all .5s;
+    }
+    .mobilenav.active{
+        width: 70vw;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .mobilenav li{
+        margin: 30px auto;
+        text-align: center;
+        padding-right: 50px;
+        list-style: none;
+    }
+    .mobilenav li a{
+        font-size: 200%;
+        color: #f5a623;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .aboutme{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutme p{
+        padding: 20px;
+    }
+    hr{
+        width: 80%;
+    }
+    .projectwrapper{
+        flex-direction: column-reverse;
+    }
+    .projectgallery{
+        width: 100%;
+    }
+    .projectgallery div{
+        width: 25%;
+    }
+    .activeproject{
+        margin: 0 auto 10px;
+    }
+}
